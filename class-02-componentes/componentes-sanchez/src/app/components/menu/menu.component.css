@@ -1,0 +1,35 @@
+.banner {
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  background-size: cover;
+  background-position: center center;
+  background-color: darkgreen;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+}
+
+.banner ul {
+  padding: 0;
+  list-style: none;
+  
+}
+
+.banner ul li {
+  margin: 15px;
+  font-weight: bold;
+}
+
+.banner .boton {
+  background: #FFD600;
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+}
