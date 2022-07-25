@@ -1,0 +1,71 @@
+<h1 (mouseenter)="cambiarVariable1()">Ejemplos de directivas:</h1>
+
+<h2>Directiva: atributo: ngClass</h2>
+<h3 [ngClass]="variable1 < 5 ? 'texto-error' : 'texto-exito'">Valor de la variable {{ variable1 }}</h3>
+
+<hr>
+
+<h2>Directiva: atributo: ngStyle</h2>
+<h3 [style.border]="variable2 == 'mesi' ? '1px solid black' : variable2 == 'cristiano' ? '2px dotted green' : '1px solid red'">Ejemplo de ngStyle con el valor: {{ variable2 }}</h3>
+
+<hr>
+
+<!-- ng generate directive directives/directiva-personalizada-01 -->
+<!-- ng g d directives/directiva-personalizada-02 -->
+<h2>Directiva Personalizada</h2>
+<h3 appDirectivaPersonalizada01>Ejemplo de directiva personalizada</h3>
+<hr>
+
+<hr>
+
+<h2>Directiva: estructural: ngFor</h2>
+<ul>
+  <li *ngFor="let item of arreglo">{{ item }}</li>
+</ul>
+
+<hr>
+
+<h2>Directiva: condicionales: ngIf</h2>
+<p *ngIf="variable1 < 5">El valor {{ variable1 }} < 5 se esta mostrando</p>
+
+<hr>
+
+<h2>Directiva: condicionales: ngSwitch</h2>
+<p [ngSwitch]="variable2">
+  <span *ngSwitchCase="'karin'">Caso-1 para la {{ variable2 }}</span>
+  <span *ngSwitchCase="'cristiano'">Caso-2 para la {{ variable2 }}</span>
+  <span *ngSwitchCase="'leonel'">Caso-3 para la {{ variable2 }}</span>
+</p>
+
+<hr>
+
+<h1>Biding: El proceso de vincular o comunicar un componente (class) con la vista HTML</h1>
+<h2>Directiva: Biding</h2>
+<ul>
+  <li>template expression: interpolacion: {{ "{{ propiedad }}" }}</li>
+  <li>template statements: {{ "\<tag ...(originEvento)=\"template_statement()\"...\>" }}</li>
+  <li>property biding: en un sentido (one-way)</li>
+  <li>property biding: en ambos sentidos (two-way)</li>
+</ul>
+
+<hr>
+
+<h2>Set variables1: interpolacion: one way data biding</h2>
+<p> el valor de variable1 es: {{ variable1 }}</p>
+
+<hr>
+
+<h2>Cambiar variables1: two way data biding</h2>
+<p>Valor de la variable1 es: {{ variable1 }}</p>
+<button (click)="cambiarVariable1()">Cambiar Variable 1</button>
+<input type="text" placeholder="Ingrese el valor de Variable1" [(ngModel)]="variable1">
+<!-- ngModel: imports FormsModule on app.module.ts -->
+
+<hr>
+
+<h2>pipe</h2>
+<h3>{{familiares | json}}</h3>
+<h3>{{ahora | date:'short'}}</h3>
+<h3>{{ahora | date:'M/d/yy, h:mm a'}}</h3>
+<!-- https://angular.io/api/common/DatePipe -->
+<!-- 'short' =	'M/d/yy, h:mm a' =	6/15/15, 9:03 AM -->
