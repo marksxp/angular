@@ -7,15 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  edad: number = 30;
+  ciudad: string = '';
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  setEdad() {
+    this.edad = Math.round(Math.random() * 50);
   }
 
   usuarios = [
     {
       "id": 1,
       "name": "Leanne Graham",
+      "age": 23,
       "username": "Bret",
       "email": "Sincere@april.biz",
       "address": {
@@ -39,6 +47,7 @@ export class HomeComponent implements OnInit {
     {
       "id": 2,
       "name": "Ervin Howell",
+      "age": 30,
       "username": "Antonette",
       "email": "Shanna@melissa.tv",
       "address": {
@@ -62,6 +71,7 @@ export class HomeComponent implements OnInit {
     {
       "id": 3,
       "name": "Clementine Bauch",
+      "age": 28,
       "username": "Samantha",
       "email": "Nathan@yesenia.net",
       "address": {
@@ -85,6 +95,7 @@ export class HomeComponent implements OnInit {
     {
       "id": 4,
       "name": "Patricia Lebsack",
+      "age": 25,
       "username": "Karianne",
       "email": "Julianne.OConner@kory.org",
       "address": {
@@ -108,12 +119,13 @@ export class HomeComponent implements OnInit {
     {
       "id": 5,
       "name": "Chelsey Dietrich",
+      "age": 35,
       "username": "Kamren",
       "email": "Lucio_Hettinger@annie.ca",
       "address": {
         "street": "Skiles Walks",
         "suite": "Suite 351",
-        "city": "Roscoeview",
+        "city": "Gwenborough",
         "zipcode": "33263",
         "geo": {
           "lat": "-31.8129",
@@ -131,6 +143,7 @@ export class HomeComponent implements OnInit {
     {
       "id": 6,
       "name": "Mrs. Dennis Schulist",
+      "age": 41,
       "username": "Leopoldo_Corkery",
       "email": "Karley_Dach@jasper.info",
       "address": {
@@ -154,6 +167,7 @@ export class HomeComponent implements OnInit {
     {
       "id": 7,
       "name": "Kurtis Weissnat",
+      "age": 38,
       "username": "Elwyn.Skiles",
       "email": "Telly.Hoeger@billy.biz",
       "address": {
@@ -177,6 +191,7 @@ export class HomeComponent implements OnInit {
     {
       "id": 8,
       "name": "Nicholas Runolfsdottir V",
+      "age": 45,
       "username": "Maxime_Nienow",
       "email": "Sherwood@rosamond.me",
       "address": {
@@ -200,6 +215,7 @@ export class HomeComponent implements OnInit {
     {
       "id": 9,
       "name": "Glenna Reichert",
+      "age": 47,
       "username": "Delphine",
       "email": "Chaim_McDermott@dana.io",
       "address": {
@@ -223,6 +239,7 @@ export class HomeComponent implements OnInit {
     {
       "id": 10,
       "name": "Clementina DuBuque",
+      "age": 20,
       "username": "Moriah.Stanton",
       "email": "Rey.Padberg@karina.biz",
       "address": {
