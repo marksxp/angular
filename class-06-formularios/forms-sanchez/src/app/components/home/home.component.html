@@ -1,0 +1,74 @@
+<form [formGroup]="formularioContacto" (ngSubmit)="enviarContacto()" class="row g-3">
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Email</label>
+    <input type="email" formControlName="email" class="form-control" id="inputEmail4">
+    <div *ngIf="formularioContacto.get('email')?.touched">
+      <p *ngIf="formularioContacto.get('email')?.errors?.['required']"><small  class="msg">Este campo es obligatorio</small></p>
+      <p *ngIf="formularioContacto.get('email')?.errors?.['email']"><small  class="msg">Este campo debe tener un formato de correo</small></p>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Password</label>
+    <input type="password" formControlName="password" class="form-control" id="inputPassword4">
+    <div *ngIf="formularioContacto.get('password')?.touched">
+      <p *ngIf="formularioContacto.get('password')?.errors?.['required']"><small  class="msg">Este campo es obligatorio</small></p>
+      <p *ngIf="formularioContacto.get('password')?.errors?.['minlength']"><small  class="msg">Minimo 6 caracteres</small></p>
+      <p *ngIf="formularioContacto.get('password')?.errors?.['maxlength']"><small  class="msg">Maximo 10 caracteres</small></p>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <label for="inputAddress" class="form-label">Address</label>
+    <input type="text" formControlName="address" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    <div *ngIf="formularioContacto.get('address')?.touched">
+      <p *ngIf="formularioContacto.get('address')?.errors?.['required']"><small  class="msg">Este campo es obligatorio</small></p>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <label for="inputAddress2" class="form-label">Address 2 <small>(Optional)</small></label>
+    <input type="text" formControlName="address2" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+  </div>
+
+  <div class="col-md-6">
+    <label for="inputCity" class="form-label">City</label>
+    <input type="text" formControlName="city" class="form-control" id="inputCity">
+    <div *ngIf="formularioContacto.get('city')?.touched">
+      <p *ngIf="formularioContacto.get('city')?.errors?.['required']"><small  class="msg">Este campo es obligatorio</small></p>
+      <p *ngIf="formularioContacto.get('city')?.errors?.['pattern']"><small  class="msg">No se aceptan numeros</small></p>
+    </div>
+  </div>
+
+  <div class="col-md-4">
+    <label for="inputState" class="form-label">State</label>
+    <select id="inputState" formControlName="state" class="form-select">
+      <option selected>Choose...</option>
+      <option>state-1</option>
+      <option>state-2</option>
+    </select>
+  </div>
+
+  <div class="col-md-2">
+    <label for="inputZip" class="form-label">Zip</label>
+    <input type="text" formControlName="zip" class="form-control" id="inputZip">
+    <div *ngIf="formularioContacto.get('zip')?.touched">
+      <p *ngIf="formularioContacto.get('zip')?.errors?.['required']"><small  class="msg">Este campo es obligatorio</small></p>
+      <p *ngIf="formularioContacto.get('zip')?.errors?.['pattern']"><small  class="msg">Solo se aceptan numeros</small></p>
+      <p *ngIf="formularioContacto.get('zip')?.errors?.['maxlength']"><small  class="msg">Maximo 3 caracteres</small></p>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" formControlName="check" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <button type="submit" [disabled]="!formularioContacto.valid" class="btn btn-primary">Send</button>
+  </div>
+</form>
