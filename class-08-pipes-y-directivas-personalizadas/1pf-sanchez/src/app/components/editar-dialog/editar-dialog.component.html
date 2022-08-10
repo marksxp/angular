@@ -1,39 +1,64 @@
-<h1 mat-dialog-title>Editar curso</h1>
+<h1 mat-dialog-title>Editar User</h1>
 <form mat-dialog-content>
-    <form [formGroup]="formulario">
-      <mat-form-field appearance="fill">
+    <form [formGroup]="formulario" class="row g-3">
+<!--       <mat-form-field appearance="fill">
         <mat-label>id</mat-label>
         <input formControlName="id" matInput>
+      </mat-form-field> -->
+
+      <form formGroupName="student">
+        <mat-form-field appearance="fill" class="col-md-6 p-1">
+          <mat-label>name</mat-label>
+          <input formControlName="name" matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="col-md-6 p-1">
+          <mat-label>lastname</mat-label>
+          <input formControlName="lastname" matInput>
+        </mat-form-field>
+      </form>
+
+      <mat-form-field appearance="fill" class="col-md-6 p-1">
+        <mat-label>username</mat-label>
+        <input formControlName="username" matInput>
       </mat-form-field>
 
-        <mat-form-field appearance="fill">
-            <mat-label>username</mat-label>
-            <input formControlName="username" matInput>
+      <mat-form-field appearance="fill" class="col-md-6 p-1">
+        <mat-label>email</mat-label>
+        <input formControlName="email" matInput>
+      </mat-form-field>
+
+      <form formGroupName="profesor" class="col-md-6 p-1">
+        <mat-form-field appearance="fill" class="col-md-12 p-1">
+          <mat-label>profesor</mat-label>
+          <input formControlName="nombre" matInput>
         </mat-form-field>
 
-        <mat-form-field appearance="fill">
-          <mat-label>email</mat-label>
-          <input formControlName="email" matInput>
+        <!-- <mat-form-field appearance="fill">
+          <mat-label>codigo</mat-label>
+          <input formControlName="codigo" matInput>
+        </mat-form-field> -->
+      </form>
+
+      <mat-form-field appearance="fill" class="col-md-6 p-1">
+        <mat-label>website</mat-label>
+        <input formControlName="website" matInput>
+      </mat-form-field>
+
+      <form formGroupName="cursos">
+        <mat-form-field appearance="fill" class="col-md-6 p-1">
+          <mat-label>nombre</mat-label>
+          <input formControlName="nombre" matInput>
         </mat-form-field>
 
-        <form formGroupName="profesor">
-          <mat-form-field appearance="fill">
-            <mat-label>nombre</mat-label>
-            <input formControlName="nombre" matInput>
-          </mat-form-field>
-
-          <mat-form-field appearance="fill">
-            <mat-label>codigo</mat-label>
-            <input formControlName="codigo" matInput>
-          </mat-form-field>
-        </form>
-
-        <mat-form-field appearance="fill">
-            <mat-label>website</mat-label>
-            <input formControlName="website" matInput>
+        <mat-form-field appearance="fill" class="col-md-6 p-1">
+          <mat-label>clases</mat-label>
+          <input formControlName="clases" matInput>
         </mat-form-field>
 
-        <!-- <mat-slide-toggle formControlName="estado">estado</mat-slide-toggle> -->
+        <mat-slide-toggle formControlName="estado" class="col-md-12 p-1">estado</mat-slide-toggle>
+      </form>
+
     </form>
 </form>
 <div mat-dialog-actions>

@@ -11,6 +11,7 @@ import { AppMaterialModule } from './app.material.module';
 import { TransformarPipe } from './pipes/transformar.pipe';
 import { TextoDirective } from './directives/texto.directive';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Transformar2Pipe } from './pipes/transformar2.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     TablaComponent,
     EditarDialogComponent,
     TransformarPipe,
-    TextoDirective
+    TextoDirective,
+    Transformar2Pipe
   ],
   imports: [
     BrowserModule,

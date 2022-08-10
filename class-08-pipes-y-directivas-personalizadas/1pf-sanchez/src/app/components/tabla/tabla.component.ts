@@ -140,8 +140,8 @@ const ELEMENT_DATA: User[] = [
 })
 export class TablaComponent implements OnInit {
 
-  //columnas: string[] = ['id', 'student', 'username', 'email', 'website', 'curso', 'clases', 'profesor', 'estado', 'acciones'];
-  columnas: string[] = ['id', 'username', 'email', 'website', 'profesor', 'acciones'];
+  columnas: string[] = ['id', 'student', 'username', 'email', 'website', 'curso', 'clases', 'profesor', 'estado', 'acciones'];
+  //columnas: string[] = ['id', 'username', 'email', 'website', 'profesor', 'acciones'];
   dataSource: MatTableDataSource<User> = new MatTableDataSource(ELEMENT_DATA);
   @ViewChild(MatTable) tabla!: MatTable<User>;
 
@@ -158,7 +158,7 @@ export class TablaComponent implements OnInit {
 
   editar(elemento: User){
     const dialogRef = this.dialog.open(EditarDialogComponent, {
-      width: '350px',
+      width: '450px',
       data: elemento
     });
 

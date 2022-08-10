@@ -1,4 +1,4 @@
-<mat-form-field>
+<mat-form-field style="margin-left: 10px;">
   <mat-label>Buscar</mat-label>
   <input type="text" (keyup)="filtrar($event)" matInput>
 </mat-form-field>
@@ -10,10 +10,10 @@
       <td mat-cell *matCellDef="let element">{{ element.id }}</td>
   </ng-container>
 
-<!--   <ng-container matColumnDef="student">
+  <ng-container matColumnDef="student">
       <th mat-header-cell *matHeaderCellDef><p [appTexto]="'20px'">Student</p></th>
       <td mat-cell *matCellDef="let element">{{ element.student | transformar }}</td>
-  </ng-container> -->
+  </ng-container>
 
   <ng-container matColumnDef="username">
       <th mat-header-cell *matHeaderCellDef><p [appTexto]="'20px'">Username</p></th>
@@ -30,25 +30,25 @@
     <td mat-cell *matCellDef="let element">{{ element.website }}</td>
   </ng-container>
 
-<!--   <ng-container matColumnDef="curso">
+  <ng-container matColumnDef="curso">
       <th mat-header-cell *matHeaderCellDef><p [appTexto]="'20px'">Curso</p></th>
       <td mat-cell *matCellDef="let element">{{ element.cursos.nombre }}</td>
-  </ng-container> -->
+  </ng-container>
 
-<!--   <ng-container matColumnDef="clases">
+  <ng-container matColumnDef="clases">
     <th mat-header-cell *matHeaderCellDef><p [appTexto]="'20px'">Clases</p></th>
     <td mat-cell *matCellDef="let element">{{ element.cursos.clases }}</td>
-  </ng-container> -->
+  </ng-container>
 
   <ng-container matColumnDef="profesor">
     <th mat-header-cell *matHeaderCellDef><p [appTexto]="'20px'">Profesor</p></th>
     <td mat-cell *matCellDef="let element">{{ element.profesor.nombre }}</td>
   </ng-container>
 
-<!--   <ng-container matColumnDef="estado">
+  <ng-container matColumnDef="estado">
     <th mat-header-cell *matHeaderCellDef><p [appTexto]="'20px'">Estado</p></th>
-    <td mat-cell *matCellDef="let element">{{ element.cursos.estado }}</td>
-  </ng-container> -->
+    <td mat-cell *matCellDef="let element">{{ element.cursos.estado  | transformar2 }}</td>
+  </ng-container>
 
   <ng-container matColumnDef="acciones">
     <th mat-header-cell *matHeaderCellDef><p [appTexto]="'20px'">Acciones</p></th>

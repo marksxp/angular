@@ -19,15 +19,22 @@ export class EditarDialogComponent implements OnInit {
   ) { 
     this.formulario = fb.group({
       id: new FormControl(data.id),
+      student: this.fb.group({
+        name: new FormControl(data.student.name),
+        lastname: new FormControl(data.student.lastname),
+      }),
       username: new FormControl(data.username),
       email: new FormControl(data.email),
-      //profesor: new FormControl(data.profesor.nombre),
       profesor: this.fb.group({
         nombre: new FormControl(data.profesor.nombre),
-        codigo: new FormControl(data.profesor.codigo)
+        //codigo: new FormControl(data.profesor.codigo)
       }),
-      website: new FormControl(data.website)
-      //estado: new FormControl(data.cursos.estado)
+      website: new FormControl(data.website),
+      cursos: this.fb.group({
+        nombre: new FormControl(data.cursos.nombre),
+        clases: new FormControl(data.cursos.clases),
+        estado: new FormControl(data.cursos.estado),
+      })
     })
   }
 
