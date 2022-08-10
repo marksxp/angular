@@ -29,6 +29,9 @@ ng generate pipe pipes/transformar
 ng generate directive directives/resaltado
 ng generate directive directives/iterador
 
+ng generate pipe pipes/transformar -m app
+ng generate directive directives/texto -m app
+
 - Install bootstrap
 https://www.youtube.com/watch?v=rli1aiL0o48
 https://getbootstrap.com/

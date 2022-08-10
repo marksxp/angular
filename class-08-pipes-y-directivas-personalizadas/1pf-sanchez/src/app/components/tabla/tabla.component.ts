@@ -1,9 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MatTable, MatTableDataSource } from '@angular/material/table';
+import { EditarDialogComponent } from '../editar-dialog/editar-dialog.component';
 
 export interface User {
-  id: Number;
-  name: string;
+  id: string;
+  student: {
+    name: string;
+    lastname: string;
+  },
   username: string;
   email: string;
   phone: string;
@@ -16,17 +21,17 @@ export interface User {
     codigo: string,
     nombre: string,
     estado: boolean,
-    clases: {
-      dias: string,
-      horario: string
-    }
+    clases: string,
   }
 }
 
 const ELEMENT_DATA: User[] = [
   {
-    "id": 1,
-    "name": "Leanne Graham",
+    "id": "1",
+    "student": {
+      "name": "Leanne",
+      "lastname": "Graham"
+    },
     "username": "Bret",
     "email": "Sincere@april.biz",
     "phone": "1-770-736-8031 x56442",
@@ -39,15 +44,15 @@ const ELEMENT_DATA: User[] = [
       "codigo": "C12342",
       "nombre": "Node Js",
       "estado": true,
-      "clases": {
-        "dias": "M-J",
-        "horario": "18:00 a 20:30"
-      }
+      "clases": "M-J de 18:00 a 20:30"
     }
   },
   {
-    "id": 2,
-    "name": "Ervin Howell",
+    "id": "2",
+    "student": {
+      "name": "Ervin",
+      "lastname": "Howell"
+    },
     "username": "Antonette",
     "email": "Shanna@melissa.tv",
     "phone": "010-692-6593 x09125",
@@ -60,15 +65,15 @@ const ELEMENT_DATA: User[] = [
       "codigo": "C76534",
       "nombre": "React Js",
       "estado": false,      
-      "clases": {
-        "dias": "M-J-S",
-        "horario": "09:00 a 11:30"
-      }
+      "clases": "M-J-S de 09:00 a 11:30"
     }
   },
   {
-    "id": 3,
-    "name": "Clementine Bauch",
+    "id": "3",
+    "student": {
+      "name": "Clementine",
+      "lastname": "Bauch"
+    },    
     "username": "Samantha",
     "email": "Nathan@yesenia.net",
     "phone": "1-463-123-4447",
@@ -81,15 +86,15 @@ const ELEMENT_DATA: User[] = [
       "codigo": "C12342",
       "nombre": "Node Js",
       "estado": true,      
-      "clases": {
-        "dias": "M-J",
-        "horario": "18:00 a 20:30"
-      }
+      "clases": "M-J de 18:00 a 20:30"
     }
   },
   {
-    "id": 4,
-    "name": "Patricia Lebsack",
+    "id": "4",
+    "student": {
+      "name": "Patricia",
+      "lastname": "Lebsack"
+    },      
     "username": "Karianne",
     "email": "Julianne.OConner@kory.org",
     "phone": "493-170-9623 x156",
@@ -102,15 +107,15 @@ const ELEMENT_DATA: User[] = [
       "codigo": "C65421",
       "nombre": "Angular",
       "estado": false,      
-      "clases": {
-        "dias": "L-M-V",
-        "horario": "19:00 a 21:30"
-      }
+      "clases": "L-M-V de 19:00 a 21:30"
     }
   },
   {
-    "id": 5,
-    "name": "Chelsey Dietrich",
+    "id": "5",
+    "student": {
+      "name": "Chelsey",
+      "lastname": "Dietrich"
+    },
     "username": "Kamren",
     "email": "Lucio_Hettinger@annie.ca",
     "phone": "(254)954-1289",
@@ -123,10 +128,7 @@ const ELEMENT_DATA: User[] = [
       "codigo": "C12342",
       "nombre": "Node Js",
       "estado": true,
-      "clases": {
-        "dias": "M-J",
-        "horario": "18:00 a 20:30"
-      }
+      "clases": "M-J de 18:00 a 20:30",
     }
   } 
 ]
@@ -138,12 +140,40 @@ const ELEMENT_DATA: User[] = [
 })
 export class TablaComponent implements OnInit {
 
-  columnas: string[] = ['id', 'name', 'username', 'email', 'curso', 'clases', 'profesor', 'estado', 'acciones'];
+  //columnas: string[] = ['id', 'student', 'username', 'email', 'website', 'curso', 'clases', 'profesor', 'estado', 'acciones'];
+  columnas: string[] = ['id', 'username', 'email', 'website', 'profesor', 'acciones'];
   dataSource: MatTableDataSource<User> = new MatTableDataSource(ELEMENT_DATA);
+  @ViewChild(MatTable) tabla!: MatTable<User>;
 
-  constructor() { }
+  constructor(
+    private dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
   }
 
+  eliminar(elemento: User){
+    this.dataSource.data = this.dataSource.data.filter((user: User) => user.id != elemento.id);
+  }
+
+  editar(elemento: User){
+    const dialogRef = this.dialog.open(EditarDialogComponent, {
+      width: '350px',
+      data: elemento
+    });
+
+    dialogRef.afterClosed().subscribe(resultado => {
+      if(resultado){
+        const item = this.dataSource.data.find(user => user.id === resultado.id);
+        const index = this.dataSource.data.indexOf(item!);
+        this.dataSource.data[index] = resultado;
+        this.tabla.renderRows();
+      }
+    })
+  }
+
+  filtrar(event: Event){
+    const valorObtenido = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = valorObtenido.trim().toLocaleLowerCase();
+  }
 }

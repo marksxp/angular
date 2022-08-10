@@ -8,6 +8,9 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { TablaComponent } from './components/tabla/tabla.component';
 import { EditarDialogComponent } from './components/editar-dialog/editar-dialog.component';
 import { AppMaterialModule } from './app.material.module';
+import { TransformarPipe } from './pipes/transformar.pipe';
+import { TextoDirective } from './directives/texto.directive';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,10 +18,13 @@ import { AppMaterialModule } from './app.material.module';
     NavbarComponent,
     ToolbarComponent,
     TablaComponent,
-    EditarDialogComponent
+    EditarDialogComponent,
+    TransformarPipe,
+    TextoDirective
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     AppMaterialModule
   ],
