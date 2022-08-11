@@ -4,18 +4,18 @@ import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { EditarDialogComponent } from '../editar-dialog/editar-dialog.component';
 
 export interface User {
-  id: string;
+  id: string,
   student: {
-    name: string;
-    lastname: string;
+    name: string,
+    lastname: string,
   },
-  username: string;
-  email: string;
-  phone: string;
-  website: string;
+  username: string,
+  email: string,
+  phone: string,
+  website: string,
   profesor: {
-    codigo: string;
-    nombre: string;
+    codigo: string,
+    nombre: string,
   },  
   cursos: {
     codigo: string,
@@ -141,7 +141,6 @@ const ELEMENT_DATA: User[] = [
 export class TablaComponent implements OnInit {
 
   columnas: string[] = ['id', 'student', 'username', 'email', 'website', 'curso', 'clases', 'profesor', 'estado', 'acciones'];
-  //columnas: string[] = ['id', 'username', 'email', 'website', 'profesor', 'acciones'];
   dataSource: MatTableDataSource<User> = new MatTableDataSource(ELEMENT_DATA);
   @ViewChild(MatTable) tabla!: MatTable<User>;
 
@@ -167,6 +166,52 @@ export class TablaComponent implements OnInit {
         const item = this.dataSource.data.find(user => user.id === resultado.id);
         const index = this.dataSource.data.indexOf(item!);
         this.dataSource.data[index] = resultado;
+        this.tabla.renderRows();
+      }
+    })
+  }
+
+  add(){
+    const elemento = {
+      id: '',
+      student: {
+        name: '',
+        lastname: '',
+      },
+      username: '',
+      email: '',
+      phone: '',
+      website: '',
+      profesor: {
+        codigo: '',
+        nombre: '',
+      },  
+      cursos: {
+        codigo: '',
+        nombre: '',
+        estado: false,
+        clases: '',
+      }
+    };
+
+    const dialogRef = this.dialog.open(EditarDialogComponent, {
+      width: '450px',
+      data: elemento
+    });
+
+    dialogRef.afterClosed().subscribe(resultado => {
+      if(resultado){
+        const index_max = this.dataSource.data.length;
+        
+        if(index_max > 0) {
+          const item = this.dataSource.data[index_max - 1];
+          //resultado.id = +item.id + 1;
+          resultado.id = Number(item.id) + 1;
+        } else {
+          resultado.id = 1;
+        }
+        
+        this.dataSource.data.push(resultado);
         this.tabla.renderRows();
       }
     })
