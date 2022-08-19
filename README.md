@@ -22,6 +22,8 @@ animation? Include and enable animation
 https://materialdesignicons.com/
 
 
+ng g c components/usuarios --skip-tests
+
 ng g c components/pipes-nativas
 ng g c components/pipes-personalizadas
 ng g c components/directivas

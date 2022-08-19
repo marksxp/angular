@@ -1,0 +1,10 @@
+<a routerLink="inicio">Inicio</a>
+<br>
+<!-- <div routerLink="contacto">Contacto</div> -->
+<button (click)="redireccionar('contacto')">Contacto</button>
+<br>
+<p routerLink="autenticacion/usuario">Usuario</p>
+<br>
+<span (click)="redireccionar('random')">Pagina no encontrada</span>
+<hr>
+<router-outlet></router-outlet>
