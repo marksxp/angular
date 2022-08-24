@@ -1,8 +1,13 @@
 * {
-    margin-left: 20px;
+    margin: 0%;
+    margin-left: 5px;
     padding: 0%;
   }
 
-.table {
-    width: 100%;
-  }
+.mat-table {
+  width: 100%;
+}
+
+th.mat-header-cell {
+  text-align: center !important;
+}

@@ -17,7 +17,7 @@ export class AlumnosComponent implements OnInit, OnDestroy {
   alumnosSubcription: Subscription;
   @ViewChild(MatTable) tabla!: MatTable<Alumno>;
 
-  columnas: string[] = ['id', 'nombre', 'apellido', 'codigoCurso', 'codigoClase', 'acciones'];
+  columnas: string[] = ['id', 'nombre', 'apellido', 'codigoCurso', 'acciones'];
 
   constructor(
     private alumnosService: AlumnosService,
@@ -62,7 +62,7 @@ export class AlumnosComponent implements OnInit, OnDestroy {
   }
 
   add(){
-    const elemento = {id: '', nombre: '', apellido: '', codigoCurso: '', codigoClase: ''};
+    const elemento = {id: '', nombre: '', apellido: '', codigoCurso: ''};
 
     const dialogRef = this.dialog.open(AlumnosEditComponent, {
       width: '450px',

@@ -23,7 +23,6 @@ export class AlumnosEditComponent implements OnInit {
       nombre: new FormControl(data.nombre),
       apellido: new FormControl(data.apellido),
       codigoCurso: new FormControl(data.codigoCurso),
-      codigoClase: new FormControl(data.codigoClase)
     })
   }
 

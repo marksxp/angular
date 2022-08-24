@@ -6,7 +6,6 @@ export interface Alumno {
   nombre: string,
   apellido: string,
   codigoCurso: string,
-  codigoClase: string
 }
 
 @Injectable({
@@ -15,11 +14,11 @@ export interface Alumno {
 export class AlumnosService {
 
   alumnos: Alumno[] = [
-    {id: 1, nombre: 'Roman', apellido: 'Garcia', codigoCurso: '', codigoClase: ''},
-    {id: 2, nombre: 'Abner', apellido: 'Quintero', codigoCurso: '', codigoClase: ''},
-    {id: 3, nombre: 'Jorge', apellido: 'Zapata', codigoCurso: '', codigoClase: ''},
-    {id: 4, nombre: 'Franz', apellido: 'Ledezma', codigoCurso: '', codigoClase: ''},
-    {id: 5, nombre: 'Lautaro', apellido: 'Martinez', codigoCurso: '', codigoClase: ''}
+    {id: 1, nombre: 'Roman', apellido: 'Garcia', codigoCurso: ''},
+    {id: 2, nombre: 'Abner', apellido: 'Quintero', codigoCurso: ''},
+    {id: 3, nombre: 'Jorge', apellido: 'Zapata', codigoCurso: ''},
+    {id: 4, nombre: 'Franz', apellido: 'Ledezma', codigoCurso: ''},
+    {id: 5, nombre: 'Lautaro', apellido: 'Martinez', codigoCurso: ''}
   ];
 
   alumnosObservable: Observable<any>;
@@ -82,6 +81,6 @@ export class AlumnosService {
     return new Observable<any>((suscriptor) => {
       suscriptor.next(this.alumnos);
     });
-
   }
+
 }
