@@ -7,6 +7,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { PaginaNoEncontradaComponent } from './components/pagina-no-encontrada/pagina-no-encontrada.component';
+import { AutenticacionComponent } from './components/autenticacion/autenticacion.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PaginaNoEncontradaComponent } from './components/pagina-no-encontrada/p
     InicioComponent,
     ContactoComponent,
     UsuariosComponent,
-    PaginaNoEncontradaComponent
+    PaginaNoEncontradaComponent,
+    AutenticacionComponent
   ],
   imports: [
     BrowserModule,

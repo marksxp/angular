@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AutenticacionComponent } from './components/autenticacion/autenticacion.component';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { PaginaNoEncontradaComponent } from './components/pagina-no-encontrada/pagina-no-encontrada.component';
@@ -9,9 +10,10 @@ const routes: Routes = [
   { path: 'inicio', component: InicioComponent }, // localhost:4200/inicio
   { path: 'contacto', component: ContactoComponent },
   { 
-    path: 'autenticacion',
+    path: 'autenticacion', component: AutenticacionComponent,
     children: [
-      { path: 'usuarios', component: UsuariosComponent } // localhost:4200/autenticacion/usuarios
+      { path: 'usuario', component: UsuariosComponent }, // localhost:4200/autenticacion/usuarios
+      { path: 'usuario/:id', component: UsuariosComponent } // localhost:4200/autenticacion/usuario/534
     ]
   },
   { path: '', redirectTo: 'inicio', pathMatch: 'full' },

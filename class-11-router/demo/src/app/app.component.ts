@@ -15,6 +15,10 @@ export class AppComponent {
 
 
   redireccionar(ruta: string) {
-    this.router.navigate([ruta]);
+    this.router.navigate([ruta, {
+      id: 1,
+      nombre: 'Abner',
+      curso: 'Angular'
+    }]);
   }
 }
