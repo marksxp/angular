@@ -14,11 +14,11 @@ export interface Clase {
 export class ClasesService {
 
   clases: Clase[] = [
-    {id: 1, codigo: 'CL001', nombre: 'Angular', temas: '1.1.tema; 1.2.tema; 1.3.tema'},
-    {id: 2, codigo: 'CL002', nombre: 'ReactJS', temas: '2.1.tema; 2.2.tema; 2.3.tema'},
-    {id: 3, codigo: 'CL003', nombre: 'Python', temas: '3.1.tema; 3.2.tema; 3.3.tema'},
-    {id: 4, codigo: 'CL004', nombre: 'JavaScript', temas: '4.1.tema; 4.2.tema; 4.3.tema'},
-    {id: 5, codigo: 'CL005', nombre: 'NodeJS', temas: '5.1.tema; 5.2.tema; 5.3.tema'},
+    {id: 1, codigo: 'CL001', nombre: 'CL-Angular', temas: '1.1.tema; 1.2.tema; 1.3.tema'},
+    {id: 2, codigo: 'CL002', nombre: 'CL-ReactJS', temas: '2.1.tema; 2.2.tema; 2.3.tema'},
+    {id: 3, codigo: 'CL003', nombre: 'CL-Python', temas: '3.1.tema; 3.2.tema; 3.3.tema'},
+    {id: 4, codigo: 'CL004', nombre: 'CL-JavaScript', temas: '4.1.tema; 4.2.tema; 4.3.tema'},
+    {id: 5, codigo: 'CL005', nombre: 'CL-NodeJS', temas: '5.1.tema; 5.2.tema; 5.3.tema'},
   ];
 
   clasesObservable: Observable<any>;

@@ -15,11 +15,11 @@ export interface Curso {
 export class CursosService {
 
   cursos: Curso[] = [
-    {id: 1, codigo: 'C0001', nombre: 'Angular', codigoProfesor: '', codigoClase: ''},
-    {id: 2, codigo: 'C0002', nombre: 'ReactJS', codigoProfesor: '', codigoClase: ''},
-    {id: 3, codigo: 'C0003', nombre: 'Python', codigoProfesor: '', codigoClase: ''},
-    {id: 4, codigo: 'C0004', nombre: 'JavaScript', codigoProfesor: '', codigoClase: ''},
-    {id: 5, codigo: 'C0005', nombre: 'NodeJS', codigoProfesor: '', codigoClase: ''},
+    {id: 1, codigo: 'C0001', nombre: 'Angular', codigoProfesor: 'P0001', codigoClase: 'CL001'},
+    {id: 2, codigo: 'C0002', nombre: 'ReactJS', codigoProfesor: 'P0002', codigoClase: 'CL002'},
+    {id: 3, codigo: 'C0003', nombre: 'Python', codigoProfesor: 'P0003', codigoClase: 'CL003'},
+    {id: 4, codigo: 'C0004', nombre: 'JavaScript', codigoProfesor: 'P0004', codigoClase: 'CL004'},
+    {id: 5, codigo: 'C0005', nombre: 'NodeJS', codigoProfesor: 'P0005', codigoClase: 'CL005'},
   ];
 
   cursosObservable: Observable<any>;

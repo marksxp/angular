@@ -14,11 +14,11 @@ export interface Alumno {
 export class AlumnosService {
 
   alumnos: Alumno[] = [
-    {id: 1, nombre: 'Roman', apellido: 'Garcia', codigoCurso: ''},
-    {id: 2, nombre: 'Abner', apellido: 'Quintero', codigoCurso: ''},
-    {id: 3, nombre: 'Jorge', apellido: 'Zapata', codigoCurso: ''},
-    {id: 4, nombre: 'Franz', apellido: 'Ledezma', codigoCurso: ''},
-    {id: 5, nombre: 'Lautaro', apellido: 'Martinez', codigoCurso: ''}
+    {id: 1, nombre: 'Roman', apellido: 'Garcia', codigoCurso: 'C0001'},
+    {id: 2, nombre: 'Abner', apellido: 'Quintero', codigoCurso: 'C0004'},
+    {id: 3, nombre: 'Jorge', apellido: 'Zapata', codigoCurso: 'C0001'},
+    {id: 4, nombre: 'Franz', apellido: 'Ledezma', codigoCurso: 'C0003'},
+    {id: 5, nombre: 'Lautaro', apellido: 'Martinez', codigoCurso: 'C0002'}
   ];
 
   alumnosObservable: Observable<any>;
