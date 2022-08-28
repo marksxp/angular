@@ -1,0 +1,40 @@
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { Sesion } from 'src/app/models/sesion';
+import { Usuario } from 'src/app/models/usuario';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthService {
+  sesionSubject!: BehaviorSubject<Sesion> //contiene un subject y se puede agregar un valor por defecto al inicio
+
+  constructor() {
+    const sesion: Sesion = {
+      sesionActiva: false
+    }
+    this.sesionSubject = new BehaviorSubject(sesion);
+   }
+
+   iniciarSesion(usuario: Usuario) {
+    const sesion: Sesion = {
+      sesionActiva: true,
+      usuario: {
+        usuario: usuario.usuario,
+        constrasena: usuario.constrasena
+      }
+    };
+    this.sesionSubject.next(sesion);
+   }
+
+   cerrarSesion() {
+    const sesion: Sesion = {
+      sesionActiva: false
+    };
+    this.sesionSubject.next(sesion);
+   }
+
+   obtnerSesion() {
+    return this.sesionSubject.asObservable();
+   }
+}

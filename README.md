@@ -36,6 +36,12 @@ ng generate directive directives/iterador
 ng generate pipe pipes/transformar -m app
 ng generate directive directives/texto -m app
 
+- agregar un feature modulo + archivo de rutas
+ng generate module auth --routing
+
+ng generate component auth/components/login --skip-tests
+
+
 - Install bootstrap
 https://www.youtube.com/watch?v=rli1aiL0o48
 https://getbootstrap.com/
