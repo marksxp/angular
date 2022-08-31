@@ -15,11 +15,14 @@ export class InicioComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.auth.obtnerSesion().subscribe(sesion => {
+    console.log("Componente inciandose");
+    /*
+    this.auth.obtenerSesion().subscribe(sesion => {
       if (!sesion.sesionActiva) {
-        this.router.navigate(['login']);
+        //this.router.navigate(['login']);
+        this.router.navigate(['auth/login']);
       }
-    })
+    })*/
   }
 
 }

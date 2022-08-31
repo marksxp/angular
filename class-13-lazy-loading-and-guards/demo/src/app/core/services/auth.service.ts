@@ -21,7 +21,11 @@ export class AuthService {
       sesionActiva: true,
       usuario: {
         usuario: usuario.usuario,
-        constrasena: usuario.constrasena
+        contrasena: usuario.contrasena,
+        admin: usuario.admin,
+        canActivateChild: usuario.canActivateChild,
+        canLoad: usuario.canLoad,
+        canDeactivate: usuario.canDeactivate
       }
     };
     this.sesionSubject.next(sesion);
@@ -34,7 +38,7 @@ export class AuthService {
     this.sesionSubject.next(sesion);
    }
 
-   obtnerSesion() {
+   obtenerSesion() {
     return this.sesionSubject.asObservable();
    }
 }

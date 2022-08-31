@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from './core/services/auth.service';
 import { Sesion } from './models/sesion';
@@ -12,10 +13,16 @@ export class AppComponent {
   sesion$!: Observable<Sesion>;
 
   constructor(
-    private auth: AuthService
+    private auth: AuthService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
-    this.sesion$ = this.auth.obtnerSesion();
+    this.sesion$ = this.auth.obtenerSesion();
+  }
+
+  cerrarSesion() {
+    this.auth.cerrarSesion();
+    this.router.navigate(['auth/login']);
   }
 }

@@ -1,4 +1,8 @@
 export interface Usuario {
-    usuario: string,
-    constrasena: string
+    usuario: string;
+    contrasena: string;
+    admin: boolean;
+    canActivateChild: boolean;
+    canLoad: boolean;
+    canDeactivate: boolean;
 }

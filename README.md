@@ -60,3 +60,15 @@ config: angular.json
 
 - data Json
 https://jsonplaceholder.typicode.com/
+
+
+- test
+https://angular-training-guide.rangle.io/testing
+
+- BDD
+https://cucumber.io/
+
+- test incluidos en angular:
+https://jasmine.github.io/		(define las pruebas)
+https://karma-runner.github.io/latest/index.html		(crea un servidor para pruebas)
+https://ng-mocks.sudo.eu/

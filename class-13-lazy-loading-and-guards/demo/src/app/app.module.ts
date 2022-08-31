@@ -14,7 +14,7 @@ import { AuthService } from './core/services/auth.service';
   ],
   imports: [
     BrowserModule,
-    AuthModule,
+    //AuthModule,
     AppRoutingModule
   ],
   providers: [

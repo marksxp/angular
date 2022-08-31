@@ -12,7 +12,11 @@ import { Usuario } from 'src/app/models/usuario';
 export class LoginComponent implements OnInit {
   formulario: FormGroup = new FormGroup({
     usuario: new FormControl('abner', [Validators.required]),
-    constrasena: new FormControl('1234', [Validators.required])
+    contrasena: new FormControl('1234', [Validators.required]),
+    admin: new FormControl(false),
+    canActivateChild: new FormControl(false),
+    canLoad: new FormControl(false),
+    canDeactivate:new FormControl(false)
   });
 
   constructor(
@@ -26,7 +30,11 @@ export class LoginComponent implements OnInit {
   login() {
     const usuario: Usuario = {
       usuario: this.formulario.value.usuario,
-      constrasena: this.formulario.value.constrasena
+      contrasena: this.formulario.value.contrasena,
+      admin: this.formulario.value.admin,
+      canActivateChild: this.formulario.value.canActivateChild,
+      canLoad: this.formulario.value.canLoad,
+      canDeactivate: this.formulario.value.canDeactivate
     }
     //console.log(this.formulario);
     this.auth.iniciarSesion(usuario);
