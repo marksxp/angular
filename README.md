@@ -72,3 +72,7 @@ https://cucumber.io/
 https://jasmine.github.io/		(define las pruebas)
 https://karma-runner.github.io/latest/index.html		(crea un servidor para pruebas)
 https://ng-mocks.sudo.eu/
+
+
+- mock
+https://mockapi.io
