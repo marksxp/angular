@@ -76,3 +76,6 @@ https://ng-mocks.sudo.eu/
 
 - mock
 https://mockapi.io
+
+- obs:
+https://stackoverflow.com/questions/70219496/angular-material-table-sort-not-working-when-using-http-get
