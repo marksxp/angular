@@ -42,6 +42,7 @@ ng generate module auth --routing
 ng generate component auth/components/login --skip-tests
 
 ng add @ngrx/store
+ng add @ngrx/store-devtools
 
 - Install bootstrap
 https://www.youtube.com/watch?v=rli1aiL0o48

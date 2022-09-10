@@ -1,1 +1,9 @@
-<p>cursos works!</p>
+<!--{{ cargando$ | async | json }}-->
+
+<b *ngIf="(cargando$ | async)">Cargando...</b>
+<!--<mat-progress-spinner></mat-progress-spinner>-->
+<div *ngIf="!(cargando$ | async)">
+    <p>Pagina de Cursos</p>
+    <app-lista></app-lista>
+</div>
+
