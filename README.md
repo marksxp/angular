@@ -44,6 +44,26 @@ ng generate component auth/components/login --skip-tests
 ng add @ngrx/store
 ng add @ngrx/store-devtools
 
+ng add @ngrx/store @latest
+
+
+ng generate feature cursos/state/cursos
+Error: Unknown argument: cursos/state/cursos
+- Solucion:
+ng add @ngrx/schematics
+ng generate feature cursos/state/cursos -m cursos
+ failure actions? No
+ effect and reducer? cargar
+
+ng generate feature core/state/sesion -m app
+ failure actions? No
+ effect and reducer? cargar
+
+
+ng generate guard core/guards/auth
+
+
+
 - Install bootstrap
 https://www.youtube.com/watch?v=rli1aiL0o48
 https://getbootstrap.com/

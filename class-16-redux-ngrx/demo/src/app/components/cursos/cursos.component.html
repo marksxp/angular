@@ -1,7 +1,9 @@
 <!--{{ cargando$ | async | json }}-->
 
-<b *ngIf="(cargando$ | async)">Cargando...</b>
-<!--<mat-progress-spinner></mat-progress-spinner>-->
+<div *ngIf="(cargando$ | async)">
+    <mat-spinner></mat-spinner>
+    <b>Cargando...</b>
+</div>
 <div *ngIf="!(cargando$ | async)">
     <p>Pagina de Cursos</p>
     <app-lista></app-lista>
