@@ -46,6 +46,7 @@ ng add @ngrx/store-devtools
 
 ng add @ngrx/store @latest
 
+ng add @ngrx/effects @latest
 
 ng generate feature cursos/state/cursos
 Error: Unknown argument: cursos/state/cursos
