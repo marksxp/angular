@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <form [formGroup]="formulario" (ngSubmit)="login()">
+                <input type="text" placeholder="Nombre de usuario" formControlName="usuario"> <br>
+                <input type="password" placeholder="Contraseña" formControlName="contrasena"> <br>
+                <input type="checkbox" formControlName="admin"> Admin <br>
+                <input type="checkbox" formControlName="canActivateChild"> Can Activate Child <br>
+                <input type="checkbox" formControlName="canLoad"> Can Load <br>
+                <input type="checkbox" formControlName="canDeactivate"> Can Deactivate <br>
+                <button mat-raised-button color="primary" type="submit">Login</button>
+            </form>
+        </div>
+</div>
